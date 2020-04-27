@@ -11,8 +11,6 @@ import { DatabaseService } from '../database.service';
 export class NavComponent implements OnInit {
   searchForm;
   route;
-  inHome;
-  inList;
   constructor(private router: Router,private databaseService:DatabaseService) {
   
     this.searchForm = new FormGroup({
@@ -24,6 +22,10 @@ ngOnInit() {
 
   search(){
     this.databaseService.changeTerm(this.searchForm.value.term);
+  }
+
+  inList(){
+    return this.router.url === '/list';
   }
 
 }

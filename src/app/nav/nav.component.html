@@ -3,6 +3,6 @@
     <a routerLink = 'list'  routerLinkActive="active">List</a>
     <form (input)="search()" [formGroup]='searchForm'>
         <input class="form-control mr-sm-2 mt-sm-2 col-lg-3 float-right"
-         type="search" placeholder="Search" aria-label="Search" *ngIf="router.url === '/list'" formControlName='term' />
+         type="search" placeholder="Search" aria-label="Search" *ngIf="inList()" formControlName='term' />
     </form>
   </div>
