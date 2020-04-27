@@ -11,9 +11,11 @@ import { DatabaseService } from '../database.service';
 export class NavComponent implements OnInit {
   searchForm;
   route;
-  inHome = false;
-  inList = false;
+  inHome;
+  inList;
   constructor(private router: Router,private databaseService:DatabaseService) {
+    this.inHome = true;
+    this.inList = false;
     this.searchForm = new FormGroup({
       'term' : new FormControl()
     })
