@@ -14,23 +14,23 @@ export class NavComponent implements OnInit {
   inHome;
   inList;
   constructor(private router: Router,private databaseService:DatabaseService) {
-    this.inHome = true;
-    this.inList = false;
+    
+    router.events.subscribe((val) => {
+      if (val instanceof ActivationEnd) {
+          this.route =  val.snapshot.component['name'];
+          if(this.route == 'HomeComponent'){
+            this.inHome = true;
+            this.inList = false;
+          }else if(this.route == 'ListComponent'){
+            this.inHome = false;
+            this.inList = true;
+          }
+      }
+  });
+  
     this.searchForm = new FormGroup({
       'term' : new FormControl()
     })
-    router.events.subscribe((val) => {
-        if (val instanceof ActivationEnd) {
-            this.route =  val.snapshot.component['name'];
-            if(this.route == 'HomeComponent'){
-              this.inHome = true;
-              this.inList = false;
-            }else if(this.route == 'ListComponent'){
-              this.inHome = false;
-              this.inList = true;
-            }
-        }
-    });
 }
 ngOnInit() {
 }
