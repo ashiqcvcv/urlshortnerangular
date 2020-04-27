@@ -13,7 +13,7 @@
         <th scope="row">{{ndx + 1}}</th>
         <td>{{ shorturl.name }}</td>
         <td>
-          <a href="{{ shorturl.long}}">{{ (str | slice:0:19)+'...' }}</a>
+          <a href="{{ shorturl.long}}">{{ (shorturl.link | slice:0:19)+'...' }}</a>
           <input src="./assets/img/copy.png" type="image" ngxClipboard [cbContent]="shorturl.link"/>
         </td>
       </tr>
