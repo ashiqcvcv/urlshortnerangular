@@ -1,3 +1,13 @@
 body{
     background-image: linear-gradient(140deg, rgb(57, 45, 209) 0%, rgb(142, 41, 149) 100%);
 }
+
+.outer {
+    width: 100%;
+    height: 89vh;
+    display: flex;
+}
+
+.inner {
+    margin: auto;
+}

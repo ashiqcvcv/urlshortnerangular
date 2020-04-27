@@ -1,0 +1,25 @@
+<body style="background-image: linear-gradient(140deg, rgb(57, 45, 209) 0%, rgb(142, 41, 149) 100%);">
+<div class="container outer">
+    <div class="center inner justify-content-center">
+        <p class="h6 text-center" style="color: white;">PASTE YOUR URL HERE</p>
+        <form [formGroup]='urlInfo' (submit)="createUrl()">
+                <input type="text" id="input" class="form-control col-lg-12 col-sm-6" formControlName='longUrl'>
+            <p class="h6 text-center" style="color: white;">NAME (MAPED TO LIST)</p>
+                <input type="text" id="input" class="form-control col-lg-12 col-sm-6" formControlName='name'>
+                <div class="text-center pb-2 pt-1">
+                    <input type="submit" value="Generate URL" class="btn btn-secondary">
+                </div>
+        </form>
+            <input type="text" value="{{ shortUrl.url }}" class="form-control col-lg-12 col-sm-6" readonly #inputTarget />
+            <div class="text-center pt-1">
+                <button [ngxClipboard]="inputTarget" class="btn btn-secondary">Copy URL</button>
+            </div>
+    </div>
+</div>
+
+<hr>
+<div class="footer-copyright text-center pb-1">© 2020 Copyright:
+    <a href=""> @sh!q</a>
+</div>
+ 
+</body>

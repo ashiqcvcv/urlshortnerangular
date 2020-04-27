@@ -1,0 +1,27 @@
+<body style="background-image: linear-gradient(140deg, rgb(57, 45, 209) 0%, rgb(142, 41, 149) 100%);">
+
+<table class="table" style="color: white;">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Short URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let shorturl of shortUrls |filter:filterValue; let ndx = index'>
+        <th scope="row">{{ndx + 1}}</th>
+        <td>{{ shorturl.name }}</td>
+        <td>
+          <a href="{{ shorturl.long}}">{{ shorturl.link }}</a>
+          <input src="./assets/img/copy.png" type="image" ngxClipboard [cbContent]="shorturl.link"/>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<hr>
+
+<div class="footer-copyright text-center pb-1">© 2020 Copyright:
+<a href=""> @sh!q</a>
+</div>
+</body>
