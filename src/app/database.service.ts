@@ -13,18 +13,11 @@ export class DatabaseService {
     
   }
   createUrl(data):Observable<any>{
-    return this.http.post('https://shorturliq.herokuapp.com/create',data)
+    return this.http.post('https://urliq.herokuapp.com/create',data)
   }
   listUrl():Observable<any>{
-    return this.http.get('https://shorturliq.herokuapp.com/list')
+    return this.http.get('https://urliq.herokuapp.com/list')
   }
-  // filter(data){
-  //   console.log(data,"is the data send");
-  //   this.searchTerm = data;
-  // }
-  // search(){
-  //   return this.searchTerm;
-  // }
 
   changeTerm(message: string) {
     this.messageSource.next(message)
